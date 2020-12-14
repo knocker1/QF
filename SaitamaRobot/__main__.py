@@ -51,7 +51,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey {}, im{}! 
+Hey {}, im {}! 
 You can find my list of available commands with /help.
 """
 
@@ -63,7 +63,6 @@ Hey its me *{}* again.
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
-
 {}
 And the following:
 """.format(
