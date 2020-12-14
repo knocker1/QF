@@ -19,7 +19,7 @@ useragent = 'Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebK
 opener.addheaders = [('User-agent', useragent)]
 
 @run_async
-def reverse(update: Update, context:CallbackContext):
+def search(update: Update, context:CallbackContext):
     if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
 
@@ -62,7 +62,7 @@ def reverse(update: Update, context:CallbackContext):
             img_link = splatargs[1]
             lim = 2
         else:
-            msg.reply_text("/reverse <link> <amount of images to return.>")
+            msg.reply_text("/search <link> <amount of images to return.>")
             return
         try:
             urllib.request.urlretrieve(img_link, imagename)
@@ -80,7 +80,7 @@ def reverse(update: Update, context:CallbackContext):
             msg.reply_text(f"{VE}\nPlease try again using http or https protocol.")
             return
     else:
-        msg.reply_markdown("Please reply to a sticker, or an image to search it!\nDo you know that you can search an image with a link too? `/reverse [picturelink] <amount>`.")
+        msg.reply_markdown("Please reply to a sticker, or an image to search it!\nDo you know that you can search an image with a link too? `/search [picturelink] <amount>`.")
         return
 
     try:
@@ -178,15 +178,20 @@ def scam(imgspage, lim):
 
     return imglinks
 
-__help__ = f"""
-*Commands:* 
-• `/reverse`*:* Does a *reverse image search* of the media which it was replied to.
-"""
-
-__mod_name__ = "Image Search"
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    "reverse", reverse, pass_args=True, admin_ok=True
+    "search", search, pass_args=True, admin_ok=True
 )
 
 dispatcher.add_handler(REVERSE_HANDLER)
+
+__mod_name__ = "Search"    
+
+__help__ = """ 
+\
+Sometimes, in a group someone send an image or a sticker that about which you need to know more.
+so what you can do is use this command in the group, replying to the image or the sticker and you will see all of it.
+commands:
+- /search : reply to any image in the group and gives related resutls from The internet!!
+\
+"""     

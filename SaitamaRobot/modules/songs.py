@@ -157,7 +157,7 @@ async def download_video(v_url):
             f"{rip_data['id']}.mp4",
             supports_streaming=True,
             reply_to= lazy,
-	    caption="join us for more ❤️",	
+	    caption="join us for more @musicartistsworldwide ❤️",	
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
                 progress(d, t, v_url, c_time, "Uploading..",
@@ -255,7 +255,7 @@ async def download_video(v_url):
             f"{rip_data['id']}.mp3",
             reply_to= lazy,
             supports_streaming=True,
-            caption="join us at for more ❤️",
+            caption="join us at for more @musicartistsworldwide ❤️",
             attributes=[
                 DocumentAttributeAudio(duration=int(rip_data['duration']),
                                        title=str(rip_data['title']),
@@ -276,7 +276,7 @@ async def download_video(v_url):
             f"{rip_data['id']}.mp4",
             supports_streaming=True,
             reply_to= lazy,
-            caption="join us at for more ❤️",
+            caption="join us at for more @musicartistsworldwide ❤️",
             progress_callback=lambda d, t: asyncio.get_event_loop(
             ).create_task(
                 progress(d, t, v_url, c_time, "Uploading..",

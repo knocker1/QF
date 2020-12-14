@@ -30,7 +30,7 @@ def add_chat(update: Update, context: CallbackContext):
     user = update.effective_user
     is_chat = sql.is_chat(chat.id)
     if chat.type == "private":
-        msg.reply_text("You can't enable AI in PM.")
+        msg.reply_text("Asshole get out from here i wont activate here 😠😠😠.")
         return
 
     if not is_chat:
@@ -38,7 +38,7 @@ def add_chat(update: Update, context: CallbackContext):
         ses_id = str(ses.id)
         expires = str(ses.expires)
         sql.set_ses(chat.id, ses_id, expires)
-        msg.reply_text("AI successfully enabled for this chat!")
+        msg.reply_text("AI successfully activated for this group!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"#AI_ENABLED\n"
@@ -46,7 +46,7 @@ def add_chat(update: Update, context: CallbackContext):
         )
         return message
     else:
-        msg.reply_text("AI is already enabled for this chat!")
+        msg.reply_text("AI is already activated for this group 😠 !")
         return ""
 
 
@@ -59,11 +59,11 @@ def remove_chat(update: Update, context: CallbackContext):
     user = update.effective_user
     is_chat = sql.is_chat(chat.id)
     if not is_chat:
-        msg.reply_text("AI isn't enabled here in the first place!")
+        msg.reply_text("AI haven't enabled here!")
         return ""
     else:
         sql.rem_chat(chat.id)
-        msg.reply_text("AI disabled successfully!")
+        msg.reply_text("AI Deactivated successfully!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"#AI_DISABLED\n"
@@ -74,7 +74,7 @@ def remove_chat(update: Update, context: CallbackContext):
 
 def check_message(context: CallbackContext, message):
     reply_msg = message.reply_to_message
-    if message.text.lower() == "saitama":
+    if message.text.lower() == "queen":
         return True
     if reply_msg:
         if reply_msg.from_user.id == context.bot.get_me().id:
@@ -136,12 +136,12 @@ def list_chatbot_chats(update: Update, context: CallbackContext):
 
 
 __help__ = f"""
-Chatbot utilizes the CoffeeHouse API and allows Saitama to talk and provides a more interactive group chat experience.
+Chatbot utilizes the CoffeeHouse API and allows queen to talk.
 
 *Commands:* 
 *Admins only:*
- • `/addchat`*:* Enables Chatbot mode in the chat.
- • `/rmchat`*:* Disables Chatbot mode in the chat.
+ • `/addchat`*:* Activate A.I in group.
+ • `/rmchat`*:*  Deactivate A.I in group.
 
 Reports bugs at @{SUPPORT_CHAT}
 *Powered by CoffeeHouse* (https://coffeehouse.intellivoid.net/) from @Intellivoid
@@ -161,7 +161,7 @@ dispatcher.add_handler(REMOVE_CHAT_HANDLER)
 dispatcher.add_handler(CHATBOT_HANDLER)
 dispatcher.add_handler(LIST_CB_CHATS_HANDLER)
 
-__mod_name__ = "Chatbot"
+__mod_name__ = "A.I"
 __command_list__ = ["addchat", "rmchat", "listaichats"]
 __handlers__ = [
     ADD_CHAT_HANDLER, REMOVE_CHAT_HANDLER, CHATBOT_HANDLER,

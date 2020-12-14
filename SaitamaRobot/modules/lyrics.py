@@ -43,8 +43,9 @@ dispatcher.add_handler(LYRICS_HANDLER)
 
 
 __help__ = """
-*Song lyrics Download*
- hue hue hue
+*Song lyrics usage*
+
+ example : /lyrics faded
 """
 
-__mod_name__ = "Songslyrics"
+__mod_name__ = "Lyrics"

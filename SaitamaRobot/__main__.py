@@ -51,25 +51,18 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
-I am an Anime themed group management bot.
-Build by weebs for weebs, I specialize in managing anime and similar themed groups.
+Hey {}, im{}! 
 You can find my list of available commands with /help.
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a Hero For Fun and help admins manage their groups with One Punch! Have a look at the following for an idea of some of \
-the things I can help you with.
-
+Hey its me *{}* again.
 *Main* commands available:
- • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
  • /donate: information on how to donate!
  • /settings:
    • in PM: will send you your settings for all supported modules.
    • in a group: will redirect you to pm, with all that chat's settings.
-
 
 {}
 And the following:
@@ -80,9 +73,8 @@ And the following:
 SAITAMA_IMG = "https://telegra.ph/file/46e6d9dfcb3eb9eae95d9.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-Saitama is hosted on one of Kaizoku's Servers and doesn't require any donations as of now but \
-You can donate to the original writer of the Base code, Paul
-There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+queen is hosted on aws servers
+To keep the bot alive: [PayPal](paypal.me/deepakroddah)."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -200,31 +192,18 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Saitama to your group",
+                            text="⚡ Push queen to your group ⚡",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
-                    ],
-                     [
-                         InlineKeyboardButton(
-                             text="🚑 Support Group",
-                             url=f"https://t.me/{SUPPORT_CHAT}"),
-                         InlineKeyboardButton(
-                             text="🔔 Updates Channel",
-                             url="https://t.me/OnePunchUpdates")
                      ],
                      [
                          InlineKeyboardButton(
-                             text="🧾 Getting started guide",
-                             url="https://t.me/OnePunchUpdates/29")
-                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="🗄 Source code",
-                             url="https://github.com/AnimeKaizoku/SaitamaRobot")
+                             text="⚙️ Source code ⚙️",
+                             url="https://github.com/okgtfo/queenmusic")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
+            "You stupid dumb noob ass!\n<b>😠 im running  since:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
@@ -500,7 +479,7 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 254318997 and DONATION_LINK:
             update.effective_message.reply_text(
-                "You can also donate to the person currently running me "
+                " My paypal email donation link "
                 "[here]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN)
 
@@ -516,7 +495,7 @@ def donate(update: Update, context: CallbackContext):
                 "I've PM'ed you about donating to my creator!")
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in PM first to get donation information.")
+                "My paypal email donation link.")
 
 
 def migrate_chats(update: Update, context: CallbackContext):

@@ -391,7 +391,7 @@ async def _(event):
     os.remove('sticker.webp')
     
     
-__mod_name__ = "Quotes in sticker"    
+__mod_name__ = "Quotes"    
 
 __help__ = """ 
 \
