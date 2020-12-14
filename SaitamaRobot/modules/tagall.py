@@ -36,7 +36,8 @@ async def _(event):
         #await event.delete()
 
 __help__ = """
-*Tag which is used for tagging multiple members in a single command
-example : @all
+*used for tagging multiple members in one command*
+ add me in your group
+example: @all or /tagall
 """
 __mod_name__ = "Tag"
