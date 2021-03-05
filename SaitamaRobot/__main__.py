@@ -191,18 +191,18 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="⚡ Push queen to your group ⚡",
+                            text="⚡ Push me to your group ⚡",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                      ],
                      [
                          InlineKeyboardButton(
                              text="⚙️ Source code ⚙️",
-                             url="https://github.com/okgtfo/queenmusic")
+                             url="https://github.com/knocker1/queen-final")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "You stupid dumb noob ass!\n<b>😠 im running  since:</b> <code>{}</code>"
+            "<b> im running  since:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
@@ -476,7 +476,7 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 254318997 and DONATION_LINK:
+        if OWNER_ID != 622063078 and DONATION_LINK:
             update.effective_message.reply_text(
                 " My paypal email donation link "
                 "[here]({})".format(DONATION_LINK),
