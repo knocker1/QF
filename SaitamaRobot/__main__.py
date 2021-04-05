@@ -72,8 +72,8 @@ And the following:
 SAITAMA_IMG = "https://telegra.ph/file/41063f2eb4741ad59bad9.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-queen is hosted on aws servers
-To keep the bot alive: [PayPal](paypal.me/deepakroddah)."""
+I am hosted on aws servers
+To keep the bot alive: [PayPal](paypal.me/9840qwe)."""
 
 IMPORTED = {}
 MIGRATEABLE = []
